@@ -1,0 +1,36 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-black">
+            <div class="block">
+                <section class="section is-small">
+                  <div class="rows is-mobile">
+                    <video width="1080" height="1920" controls>
+                        <source src={{Movie.ContentURL}} type="video/mp4">
+                        <source src={{Movie.ContentURL}} type="video/ogg">
+                      Your browser does not support the video tag.
+                      </video>
+                  </div>
+                </section>  
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-black">
+        <div class="content">
+          <p class="title">{{Movie.Name}}</p>
+          <p class="subtitle">{{Movie.Description}}</p>
+          <div class="content">
+              <p>Category : {{Movie.Category}}</p>
+              <p>Release Date : {{Movie.YearOfRelease.substring(0,10)}}</p>
+              <button class="button is-link is-hovered is-rounded" (click)="addToList(Movie.Id)">Add to My List</button>
+          </div>
+        </div>
+      </article>
+    </div>
+</div>
+

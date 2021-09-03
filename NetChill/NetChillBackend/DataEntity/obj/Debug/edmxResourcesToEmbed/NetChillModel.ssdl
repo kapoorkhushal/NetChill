@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NetChillModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="YearOfRelease" Type="date" Nullable="false" />
+    <Property Name="Availability" Type="date" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsFeatured" Type="bit" Nullable="false" />
+    <Property Name="PosterURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContentURL" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovieMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="MovieId" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+    <Property Name="SubscriptionDate" Type="date" Nullable="false" />
+    <Property Name="IsRevoked" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_MovieMapping_Movie">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="0..1" />
+    <End Role="MovieMapping" Type="Self.MovieMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovieMapping">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieMapping_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MovieMapping" Type="Self.MovieMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovieMapping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NetChillModelStoreContainer">
+    <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieMapping" EntityType="Self.MovieMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MovieMapping_Movie" Association="Self.FK_MovieMapping_Movie">
+      <End Role="Movie" EntitySet="Movie" />
+      <End Role="MovieMapping" EntitySet="MovieMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieMapping_User" Association="Self.FK_MovieMapping_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="MovieMapping" EntitySet="MovieMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

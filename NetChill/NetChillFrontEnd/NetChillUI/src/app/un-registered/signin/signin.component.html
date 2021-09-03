@@ -1,0 +1,107 @@
+<app-un-registered-navbar></app-un-registered-navbar>
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-black">
+            <div class="block">
+                <section class="section is-small">
+                  <div class="columns is-mobile" *ngFor = "let movie of MoviesList, let i=index">
+                    <div class="column">
+                        <app-cards [movie]="movie"></app-cards>
+                    </div>
+                    <div class="column" *ngIf="i%2!=0"></div>
+                        <app-cards [movie]="movie"></app-cards>
+                  </div>
+                </section>  
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-black">
+        <div class="content">
+          <p class="title">Sign Up</p>
+          <p class="subtitle">Hey New user!</p>
+          <div class="content">
+              <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input" [ngClass]="{'is-danger': hasError('FullName','required')}" type="text" placeholder="Full Name" formControlName="FullName" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('FullName','required')">Name is Required</p>
+                </div>
+                  
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input" [ngClass]="{'is-danger': hasError('Email','required') || hasError('Email','email')}" type="email" placeholder="Email" formControlName="Email" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('Email','required')">Email is Required</p>
+                    <p class="help is-danger" *ngIf="hasError('Email','email')">Email is Invalid</p>
+                </div>
+                  
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control has-icons-left">
+                        <input class="input" [ngClass]="{'is-danger': hasError('Password','required')}" type="password" placeholder="Password"  formControlName="Password" required>
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('Password','required')">Password is Required</p>
+                    <p class="help is-danger">Password must be at least 8 characters and contains at least one special character, number and Upper case character</p>
+                </div>
+    
+                <div class="field">
+                    <label class="label">Re-Type Password</label>
+                    <div class="control has-icons-left">
+                        <input class="input" [ngClass]="{'is-danger': hasError('RePassword','required') || passwordValidate('RePassword','match')}" type="password" placeholder="Password"  formControlName="RePassword" required>
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                    <p class="help is-danger" *ngIf="hasError('RePassword','required')">Password is Required</p>
+                    <p class="help is-danger" *ngIf="passwordValidate('RePassword','match')">Password should match</p>
+                </div>
+                                
+                <div class="field">
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox"  formControlName="AgreeTerms" required>
+                        I agree to the <a href="#">terms and conditions</a>
+                      </label>
+                    </div>
+                </div>
+
+                <div class="notification is-primary is-light" *ngIf="errorCheck">
+                  <strong>{{message}}</strong>
+                </div>
+                
+                <div class="field is-grouped">
+                    <div class="control">
+                      <button type="submit" class="button is-link" [disabled]="userForm.invalid">Submit</button>
+                    </div>
+                    <div class="control">
+                      <button type="reset" class="button is-link is-light" [disabled]="userForm.pristine" routerLink="/">Cancel</button>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <p>Already a user <a routerLink="/login"><strong>Login</strong></a></p>
+                    </div>
+                </div>
+              </form>
+          </div>
+        </div>
+      </article>
+    </div>
+</div>

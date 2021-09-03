@@ -1,0 +1,30 @@
+<app-registered-navbar></app-registered-navbar>
+<div class="notification is-primary is-light" *ngIf="IsRevoked">
+  <strong>Your Subscription has been Revoked!</strong>
+</div>
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-black">
+          <p class="title is-size-1 is-family-monospace" style="color: red;">Hello {{User.FullName}}!</p>
+          <div class="block">
+              <section class="section is-small">
+                  <div class="columns is-mobile" *ngFor = "let movie of MoviesList, let i=index">
+                    <div class="column">
+                      <button class="button is-black is-hovered" (click)="buttonClick(movie.Id)" style="height: 15rem; width: 1pxrem;">
+                        <app-cards [movie]="movie"></app-cards>
+                      </button>
+                    </div>
+                    <div class="column" *ngIf="i%2!=0"></div>
+                      <button class="button is-black is-hovered" (click)="buttonClick(movie.Id)" style="height: 15rem; width: 1pxrem;">
+                        <app-cards [movie]="movie"></app-cards>
+                    </button>
+                  </div>
+              </section>  
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  

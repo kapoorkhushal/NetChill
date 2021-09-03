@@ -1,0 +1,14 @@
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\DataEntity.dll.config
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\DataEntity.dll
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\DataEntity.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\EntityFramework.dll
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\Shared.dll
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\Shared.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\EntityFramework.xml
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\obj\Debug\DataEntity.csprojAssemblyReference.cache
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\obj\Debug\DataEntity.csproj.CoreCompileInputs.cache
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\obj\Debug\DataEntity.csproj.CopyComplete
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\obj\Debug\DataEntity.dll
+C:\Users\khushalkapoor\source\repos\NetChill\DataEntity\obj\Debug\DataEntity.pdb

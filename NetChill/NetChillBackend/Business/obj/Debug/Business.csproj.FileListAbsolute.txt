@@ -1,0 +1,14 @@
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\Business.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\Business.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\DataEntity.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\Shared.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\EntityFramework.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\DataEntity.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\DataEntity.dll.config
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\Shared.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\Business\bin\Debug\EntityFramework.xml
+C:\Users\khushalkapoor\source\repos\NetChill\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Users\khushalkapoor\source\repos\NetChill\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\khushalkapoor\source\repos\NetChill\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\khushalkapoor\source\repos\NetChill\Business\obj\Debug\Business.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Business\obj\Debug\Business.pdb

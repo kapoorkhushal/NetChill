@@ -1,0 +1,21 @@
+<app-un-registered-navbar></app-un-registered-navbar>
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-black">
+          <div class="block">
+              <section class="section is-small">
+                <div class="columns is-mobile" *ngFor = "let movie of MoviesList, let i=index">
+                  <div class="column">
+                      <app-cards [movie]="movie"></app-cards>
+                  </div>
+                  <div class="column" *ngIf="i%2!=0"></div>
+                      <app-cards [movie]="movie"></app-cards>
+                </div>
+              </section>  
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>

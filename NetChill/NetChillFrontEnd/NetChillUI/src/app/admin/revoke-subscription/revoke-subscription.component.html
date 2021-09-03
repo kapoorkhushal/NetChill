@@ -1,0 +1,32 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="notification is-primary is-light" *ngIf="status">
+    <strong>{{message}}</strong>
+  </div>
+<div *ngIf = "UserList.length > 0 ; else NoUsers">
+    <table class="table has-background-success-light has-text-primary-dark is-fullwidth is-hoverable is-striped">
+        <thead>
+          <tr>
+            <th *ngFor = "let column of headers">{{column}}</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let user of UserList">
+                <!-- 
+                    <td *ngFor = "let column of values">
+                        {{user[column]}}
+                    </td>
+                -->
+                <td>{{user.FullName}}</td>
+                <td>{{user.Email}}</td>
+                <td>{{user.SubscriptionDate.toString().substring(0,10)}}</td>
+                <td><button class="button is-link is-light" (click)="revoke(user.Id)">Revoke Subscription</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #NoUsers>
+    <p class="no-users has-text-danger-dark">
+        <strong> No User Exist</strong>
+    </p>
+</ng-template>

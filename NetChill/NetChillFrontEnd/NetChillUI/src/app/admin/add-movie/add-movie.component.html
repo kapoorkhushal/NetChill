@@ -1,0 +1,124 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-black">
+            <div class="block">
+                <section class="section is-small">
+                  <div class="rows is-mobile">
+                    <div class="content">
+                        <p class="title is-family-monospace" style="color:crimson;">Add Movie</p>
+                        <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+                          <div class="field">
+                              <label class="label">Name</label>
+                              <div class="control">
+                                <input class="input" [ngClass]="{'is-danger': hasError('Name','required')}" type="text" placeholder="Movie Name" formControlName="Name" required>
+                              </div>
+                              <p class="help is-danger" *ngIf="hasError('Name','required')">Movie Name is Required</p>
+                          </div>
+                            
+                          <div class="field">
+                              <label class="label">Category</label>
+                              <div class="control">
+                                <input class="input" [ngClass]="{'is-danger': hasError('Category','required')}" type="text" placeholder="Category" formControlName="Category" required>
+                              </div>
+                              <p class="help is-danger" *ngIf="hasError('Category','required')">Category is Required</p>
+                          </div>
+                            
+                          <div class="field">
+                            <label class="label">Year Of Release</label>
+                            <div class="control">
+                              <input class="input" [ngClass]="{'is-danger': hasError('YearOfRelease','required')}" type="date" placeholder="Year Of Release" formControlName="YearOfRelease" required>
+                            </div>
+                            <p class="help is-danger" *ngIf="hasError('YearOfRelease','required')">Year Of Release is Required</p>
+                        </div>
+                          
+                        <div class="field">
+                            <label class="label">Availability</label>
+                            <div class="control">
+                              <input class="input" [ngClass]="{'is-danger': hasError('Availability','required')}" type="date" placeholder="Availability" formControlName="Availability" required>
+                            </div>
+                            <p class="help is-danger" *ngIf="hasError('Availability','required')">Availability is Required</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Description</label>
+                            <div class="control">
+                              <textarea class="textarea is-primary" [ngClass]="{'is-danger': hasError('Description','required')}" type="text" placeholder="Description" formControlName="Description" required></textarea>
+                            </div>
+                            <p class="help is-danger" *ngIf="hasError('Description','required')">Description is Required</p>
+                        </div>
+                                                    
+                          <div class="field">
+                            <div class="control">
+                              <label class="checkbox">
+                                <input type="checkbox"  formControlName="IsFeatured">
+                                Featured Movie
+                              </label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="label">Poster Link</label>
+                                <div class="file is-info">
+                                    <label class="file-label">
+                                      <input class="file-input" [ngClass]="{'is-danger': hasError('PosterURL','required')}" type="file" (change)="uploadPoster($event)" required>
+                                      <span class="file-cta">
+                                        <span class="file-icon">
+                                          <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                          Choose a file…
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>        
+                            </div>
+                            <p class="help is-danger" *ngIf="hasError('PosterURL','required')">Poster is Required</p>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label class="label">Content Link</label>
+                                <div class="file is-info">
+                                    <label class="file-label">
+                                      <input class="file-input" [ngClass]="{'is-danger': hasError('ContentURL','required')}" type="file" (change)="uploadMovie($event)" required>
+                                      <span class="file-cta">
+                                        <span class="file-icon">
+                                          <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                          Choose a file…
+                                        </span>
+                                      </span>
+                                    </label>
+                                  </div>        
+                            </div>
+                            <p class="help is-danger" *ngIf="hasError('ContentURL','required')">Content is Required</p>
+                        </div>
+
+                          <div class="notification is-primary is-light" *ngIf="errorCheck">
+                            <strong>{{message}}</strong>
+                          </div>
+                          
+                          <div class="field is-grouped">
+                              <div class="control">
+                                <button type="submit" class="button is-link" [disabled]="movieForm.invalid">Submit</button>
+                              </div>
+                              <div class="control">
+                                <button type="reset" class="button is-link is-light" [disabled]="movieForm.pristine">Cancel</button>
+                              </div>
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                </section>  
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+</div>
+

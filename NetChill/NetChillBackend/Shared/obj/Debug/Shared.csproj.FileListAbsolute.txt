@@ -1,0 +1,6 @@
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\bin\Debug\Shared.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\bin\Debug\Shared.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\obj\Debug\Shared.dll
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\obj\Debug\Shared.pdb
+C:\Users\khushalkapoor\source\repos\NetChill\Shared\obj\Debug\Shared.csprojAssemblyReference.cache

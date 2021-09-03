@@ -1,0 +1,20 @@
+<app-registered-navbar></app-registered-navbar>
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-black">
+            <p class="title is-family-monospace" style="color: red;">Featured Movies</p>
+            <div class="block">
+              <section class="section is-small">
+                  <div class="columns is-mobile" *ngFor = "let movie of MoviesList">
+                    <button class="button is-black is-hovered" (click)="buttonClick(movie.Id)" style="height: 15rem; width: 1pxrem;">
+                    <app-cards [movie]="movie"></app-cards>
+                  </button>
+                </div>
+              </section>  
+          </div>
+          </article>
+        </div>
+      </div>
+    </div>
